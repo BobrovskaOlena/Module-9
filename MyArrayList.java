@@ -1,4 +1,5 @@
 import java.util.StringJoiner;
+import java.util.*;
 
 public class MyArrayList<T> {
     private static final int INIT_NUMBER = 7;
@@ -50,31 +51,26 @@ public class MyArrayList<T> {
         for (int i = 0; i < numbering.length; i++) {
             if (numbering[i] == numbering[index1]) {
                 continue;
-            } else {
+            } if(numbering[i] != numbering[index1]) {
                 newNumbering1[a] = numbering[i];
                 a++;
             }
         }
-        System.out.println(newNumbering1);
+        System.out.println("The removal process is successful. List after removal process: " + Arrays.toString(newNumbering1));
     }
-
-    private void ifNeedNewRemove(){
-       System.out.println("The removal process is successful");
-       //, number: "+ number + ", numbering.length is: " + numbering.length);
-        int newNumber1 = numbering.length-1;
-        Object[] newNumbering1 = new Object[newNumber1];
-        System.arraycopy(numbering, 0, newNumbering1, 0, numbering.length-1);
-            numbering=newNumbering1;
-        }
-    /*
     //очищає колекцію:
     public void clear(){
-        for(int i = 0; i<typesOfFruit.length; i++){
-            typesOfFruit[i]="";
+        for(int i = 0; i<numbering.length; i++){
+            numbering[i]="";
         }
-        System.out.println(typesOfFruit);
+        int n = 0;
+        Object[] clearNumbering = new Object[n];
+        for(int i = 0; i<numbering.length; i++){
+            if(numbering[i]==""){
+                n+=0;
+            }
+        }
+        System.out.println(Arrays.toString(clearNumbering));
     }
-*/
-
-
 }
+
