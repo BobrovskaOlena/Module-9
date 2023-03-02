@@ -1,10 +1,13 @@
 public class MyArrayListTest {
     public static void main(String[] args) {
-        MyArrayList<String> typesOfFruit = new MyArrayList<String>();
-        typesOfFruit.add("Orange");
-        typesOfFruit.add("Apple");
-
-        //System.out.println(typesOfFruit.get(0));
-        //System.out.println(typesOfFruit.get(1));
+        MyArrayList<Integer> list = new MyArrayList<>();
+        for (int i = 0; i<=25; i++){
+            list.add(i);
+        }
+        System.out.println("list = "+ list);
+        System.out.println("list.size() = "+ list.size());
+        System.out.println("list.get(0) = "+ list.get(2));
+        list.remove(6);
+        ///System.out.println("list.clear() = " + list.clear());
     }
 }
