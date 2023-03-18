@@ -1,3 +1,5 @@
+package MyArrayList;
+
 import java.util.StringJoiner;
 import java.util.*;
 
@@ -45,32 +47,32 @@ public class MyArrayList<T> {
 
    //видаляє елемент із вказаним індексом:
     public void remove(int index1) {
-        int newNumber1 = numbering.length - 1;
-        Object[] newNumbering1 = new Object[newNumber1];
-        int a = 0;
-        for (int i = 0; i < numbering.length; i++) {
-            if (numbering[i] == numbering[index1]) {
-                continue;
-            } if(numbering[i] != numbering[index1]) {
-                newNumbering1[a] = numbering[i];
-                a++;
+        Object[] newNumbering1 = null;
+        for (int i = 0; i < numbering.length-1; i++) {
+            if(numbering[i].equals(index1)){
+                newNumbering1 = new Object[numbering.length-1];
+                for(int j = 0; j < i; j++){
+                    newNumbering1[j] = numbering[j];
+                }
+                for(int m = i; m < numbering.length - 1; m++){
+                    newNumbering1[m] = numbering[m+1];
+                }
+                break;
             }
         }
-        System.out.println("The removal process is successful. List after removal process: " + Arrays.toString(newNumbering1));
+        System.out.println("New Array after deleting element = "+index1+" and shifting: "+ Arrays.toString(newNumbering1));
     }
+
     //очищає колекцію:
     public void clear(){
-        for(int i = 0; i<numbering.length; i++){
-            numbering[i]="";
+        for (int i = 0; i<numbering.length; i++) {
+            numbering[i] = null;
         }
-        int n = 0;
-        Object[] clearNumbering = new Object[n];
-        for(int i = 0; i<numbering.length; i++){
-            if(numbering[i]==""){
-                n+=0;
-            }
+        System.out.println("After clearing Array:");
+            numbering = new Object[numbering.length];
+        System.out.println(Arrays.toString(numbering));
         }
-        System.out.println(Arrays.toString(clearNumbering));
+       // System.out.println(Arrays.toString(clearNumbering));
     }
-}
+
 

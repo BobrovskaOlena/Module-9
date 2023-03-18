@@ -1,3 +1,7 @@
+package MyArrayList;
+
+import MyArrayList.MyArrayList;
+
 public class MyArrayListTest {
     public static void main(String[] args) {
         MyArrayList<Integer> list = new MyArrayList<>();
@@ -6,7 +10,7 @@ public class MyArrayListTest {
         }
         System.out.println("list = "+ list);
         System.out.println("list.size() = "+ list.size());
-        System.out.println("list.get(0) = "+ list.get(2));
+        System.out.println("list.get(2) = "+ list.get(2));
         list.remove(7);
         list.clear();
 
